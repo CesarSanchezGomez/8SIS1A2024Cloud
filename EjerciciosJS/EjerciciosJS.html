@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjerciciosJS</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+
+<body>
+    <section class="home">
+        <div class="in-flex">
+            <h2 class="title">Problema 1</h2>
+            <p class="problem">Suponga que un individuo desea invertir su capital en un banco y desea saber cuanto
+                dinero ganara después de
+                un mes si el bango paga a razón de 2% mensual.</p>
+            <form method="get" name="formulario1" onsubmit="return validarFormulario1()">
+                <table class="table">
+                    <tr>
+                        <td>Introduce la cantidad que deseas invertir:</td>
+                        <td><input type="number" name="inversion" required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" name="send" value="Calcular interés" onclick="inversiones()"></td>
+                    </tr>
+                    <tr>
+                        <td>Su capital con un interés del 2% mensual es:</td>
+                        <td><input type="text" name="capitalTotal" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" name="clear" value="Borrar datos" onclick="borrar1()"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+    <script src="./js/Ejercicio1.js"></script>
+
+    <section class="home">
+        <div class="in-flex">
+            <h2 class="title">Problema 2</h2>
+            <p class="problem">Un vendedor recibe un sueldo base más un 10% extra por comisión de sus ventas, el
+                vendedor desea saber cuanto
+                dinero obtendrá por concepto de comisiones por las tres ventas que realiza en el mes y el total que
+                recibirá
+                en el mes tomando en cuenta su sueldo base y comisiones.</p>
+            <form method="get" name="formulario2" onsubmit="return validarFormulario2()">
+                <table class="table">
+                    <tr>
+                        <td>Ingresa el sueldo base del vendedor:</td>
+                        <td><input type="number" name="sueldoBase"></td>
+                    </tr>
+                    <tr>
+                        <td>Ingresa el monto de la venta número 1:</td>
+                        <td><input type="number" name="venta1"></td>
+                    </tr>
+                    <tr>
+                        <td>Ingresa el monto de la venta número 2:</td>
+                        <td><input type="number" name="venta2"></td>
+                    </tr>
+                    <tr>
+                        <td>Ingresa el monto de la venta número 3:</td>
+                        <td><input type="number" name="venta3"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" value="Calcular salario total" onclick="comisiones()"></td>
+                    </tr>
+                    <tr>
+                        <td>La comisión de la venta 1 es de:</td>
+                        <td><input type="text" name="comision1" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>La comisión de la venta 2 es de:</td>
+                        <td><input type="text" name="comision2" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>La comisión de la venta 3 es de:</td>
+                        <td><input type="text" name="comision3" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>Salario total:</td>
+                        <td><input type="text" name="sueldoTotal" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" name="clear" value="Borrar datos" onclick="borrar2()"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+    <script src="./js/Ejercicio2.js"></script>
+
+    <section class="home">
+        <div class="in-flex">
+            <h2 class="title">Problema 3</h2>
+            <p class="problem">Una tienda ofrece un descuento del 15% sobre el total de la compra y un cliente desea
+                saber cuanto deberá pagar finalmente por su compra.</p>
+            <form method="get" name="formulario3" onsubmit="return validarFormulario3()">
+                <table class="table">
+                    <tr>
+                        <td>Introduce el total de la compra:</td>
+                        <td>
+                            <input type="number" name="compraTotal">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" name="send" onclick="descuentos()" value="Calcular descuento">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>El descuento ha sido de:</td>
+                        <td><input type="text" name="descuento" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>El monto a pagar es de:</td>
+                        <td><input type="text" name="montoFinal" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" name="clear" value="Borrar datos" onclick="borrar3()"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+    <script src="./js/Ejercicio3.js"></script>
+
+    <section class="home">
+        <div class="in-flex">
+            <h2 class="title">Problema 4</h2>
+            <p class="problem">Un alumno desea saber cuál será su calificación final en la materia de Algoritmos. Dicha
+                calificación se compone de los siguientes porcentajes:</p>
+            <ul>
+                <li>55% del promedio de sus tres calificaciones parciales.</li>
+                <li>30% de la calificación del examen final.</li>
+                <li>15% de la calificación de un trabajo final.</li>
+            </ul><br>
+
+            <form method="get" name="formulario4" onsubmit="return validarFormulario4()">
+                <table class="table">
+                    <tr>
+                        <td>Parcial 1:</td>
+                        <td><input type="number" name="parcial1" min="0" max="10.0" step="0.1"
+                                oninput="validarCalificaciones(this)"></td>
+                    <tr>
+                        <td>Parcial 2:</td>
+                        <td><input type="number" name="parcial2" min="0" max="10.0" step="0.1"
+                                oninput="validarCalificaciones(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Parcial 3:</td>
+                        <td><input type="number" name="parcial3" min="0" max="10.0" step="0.1"
+                                oninput="validarCalificaciones(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Examen final:</td>
+                        <td><input type="number" name="examenFinal" min="0" max="10.0" step="0.1"
+                                oninput="validarCalificaciones(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Proyecto final:</td>
+                        <td><input type="number" name="proyectoFinal" min="0" max="10.0" step="0.1"
+                                oninput="validarCalificaciones(this)"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" value="Calificación final" onclick="promedio()"></td>
+                    </tr>
+                    <tr>
+                        <td>Calificacion final:</td>
+                        <td><input type="number" name="promedioFinal" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" value="Borrar datos" onclick="borrar4()"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+    <script src="./js/Ejercicio4.js"></script>
+
+    <section class="home">
+        <div class="in-flex">
+            <h2 class="title">Problema 5</h2>
+            <p class="problem">Un maestro desea saber que porcentaje de hombres y que porcentaje de mujeres hay en un
+                grupo
+                de estudiantes.
+            </p>
+
+            <form method="get" name="formulario5" onsubmit="return validarFormulario5()">
+                <table class="table">
+                    <tr>
+                        <td>Ingresa la cantidad de hombres del grupo:</td>
+                        <td><input type="text" name="hombres" onkeypress="return validarChar5(event)"></td>
+                    </tr>
+                    <tr>
+                        <td>Ingresa la cantidad de mujeres del grupo:</td>
+                        <td><input type="text" name="mujeres" onkeypress="return validarChar5(event)"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" name="send" onclick="porcentajes5()" value="Calcular porcentajes"></td>
+                    </tr>
+                    <tr>
+                        <td>El porcentaje total de hombre es de:</td>
+                        <td><input type="text" name="porcentajeHombres" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>El porcentaje total de mujeres es de:</td>
+                        <td><input type="text" name="porcentajeMujeres" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" name="clear" onclick="borrar5()" value="Borrar datos"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+    <script src="./js/Ejercicio5.js"></script>
+
+    <section class="home">
+        <div class="in-flex">
+            <h2 class="title">Problema 6</h2>
+            <p class="problem">Realizar un algoritmo que calcule la edad de una persona.</p>
+            <form method="get" name="formulario6">
+                <table class="table">
+                    <tr>
+                        <td>Ingresa la fecha de tu nacimiento:</td>
+                        <td><input type="date" name="fechaNacimiento"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" onclick="calcularEdad()" value="Calcular edad"></td>
+                    </tr>
+                    <tr>
+                        <td>Tu edad es de:</td>
+                        <td><input type="text" name="edad" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" name="clear" onclick="borrar6()" value="Borrar datos"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+    <script src="./js/Ejercicio6.js"></script>
+</body>
+
+</html>
